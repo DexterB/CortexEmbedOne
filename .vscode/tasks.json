@@ -1,0 +1,38 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build cortex thumbv7m-none-eabi (debug)",
+            "type": "shell",
+            "command": "cargo build --target thumbv7m-none-eabi",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "re-build cortex thumbv7m-none-eabi (debug)",
+            "type": "shell",
+            "command": "cargo clean && cargo build --target thumbv7m-none-eabi",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "build cortex thumbv7m-none-eabi (release)",
+            "type": "shell",
+            "command": "cargo build --target thumbv7m-none-eabi --release",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "re-build cortex thumbv7m-none-eabi (release)",
+            "type": "shell",
+            "command": "cargo clean && cargo build --target thumbv7m-none-eabi --release",
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}
